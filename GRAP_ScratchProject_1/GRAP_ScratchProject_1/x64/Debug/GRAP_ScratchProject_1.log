@@ -1,0 +1,3 @@
+﻿  GRAP_ScratchProject_1.cpp
+C:\Users\ASUS\Documents\GitHub\GDENG01_GameJam_Fix\GDGRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(181,55): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  GRAP_ScratchProject_1.vcxproj -> C:\Users\ASUS\Documents\GitHub\GDENG01_GameJam_Fix\GDGRAP\GRAP_ScratchProject_1\x64\Debug\GRAP_ScratchProject_1.exe
