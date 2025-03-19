@@ -60,8 +60,7 @@
               "ViewState": "AgIAABgAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-22T01:18:58.087Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -77,8 +76,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-19T00:53:14.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T00:53:14.383Z"
             },
             {
               "$type": "Document",
@@ -90,8 +88,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-19T00:51:31.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T00:51:31.351Z"
             },
             {
               "$type": "Document",
@@ -101,7 +98,7 @@
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "RelativeToolTip": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
-              "ViewState": "AgIAAJsBAAAAAAAAAAAAALoAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADUBAAAAAAAAAAAgwEkBAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-08T02:01:33.709Z",
               "EditorCaption": ""
@@ -116,8 +113,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\sample.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-22T01:18:47.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T01:18:47.009Z"
             }
           ]
         },
