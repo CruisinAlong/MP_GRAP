@@ -1,0 +1,147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\sample.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 893,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "glad.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
+              "ViewState": "AgIAAIgNAAAAAAAAAAAuwJ0NAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-21T11:28:34.34Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "sample.frag",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\sample.frag",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\sample.frag",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T01:18:58.087Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "skyboxVertShader.vert",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-19T00:53:14.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "skyboxFragShader.frag",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-19T00:51:31.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GRAP_ScratchProject_1.cpp",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp*",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp*",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAAALoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-08T02:01:33.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "sample.vert",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\sample.vert",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\GDENG01_GameJam_Fix\\GDGRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\sample.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-22T01:18:47.009Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 39,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1246,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
