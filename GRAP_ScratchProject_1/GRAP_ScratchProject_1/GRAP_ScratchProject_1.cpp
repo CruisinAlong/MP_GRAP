@@ -434,6 +434,171 @@ int main(void)
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
+    std::string goKartPath2 = "uploads_files_4679076_GOkart.obj";
+    std::vector<tinyobj::shape_t> goKartShapes2;
+    std::vector<tinyobj::material_t> goKartMaterials2;
+    std::string goKartWarning2, goKartError2;
+    tinyobj::attrib_t goKartAttributes2;
+
+    bool goKartSuccess2 = tinyobj::LoadObj(&goKartAttributes2, &goKartShapes2, &goKartMaterials2, &goKartWarning2, &goKartError2, goKartPath2.c_str());
+
+    if (!goKartSuccess2) {
+        std::cerr << "Failed to load object: " << goKartError2 << std::endl;
+        if (!goKartWarning2.empty()) {
+            std::cerr << "Warning: " << goKartWarning2 << std::endl;
+        }
+        return -1;
+    }
+    else if (goKartShapes2.empty()) {
+        std::cerr << "Object has no shapes." << std::endl;
+        return -1;
+    }
+
+    std::vector<GLuint> goKartMeshIndices2;
+
+    for (int i = 0; i < goKartShapes2[0].mesh.indices.size(); i++) {
+        goKartMeshIndices2.push_back(goKartShapes2[0].mesh.indices[i].vertex_index);
+    }
+
+    std::vector<GLfloat> goKartFullVertexData2;
+
+    for (int i = 0; i < goKartShapes2[0].mesh.indices.size(); i++) {
+        tinyobj::index_t vData = goKartShapes2[0].mesh.indices[i];
+
+        if (vData.vertex_index * 3 + 2 >= goKartAttributes2.vertices.size() ||
+            vData.normal_index * 3 + 2 >= goKartAttributes2.normals.size() ||
+            vData.texcoord_index * 2 + 1 >= goKartAttributes2.texcoords.size()) {
+            std::cerr << "Index out of bounds while accessing vertex data." << std::endl;
+            return -1;
+        }
+
+        goKartFullVertexData2.push_back(goKartAttributes2.vertices[vData.vertex_index * 3]);
+        goKartFullVertexData2.push_back(goKartAttributes2.vertices[vData.vertex_index * 3 + 1]);
+        goKartFullVertexData2.push_back(goKartAttributes2.vertices[vData.vertex_index * 3 + 2]);
+        goKartFullVertexData2.push_back(goKartAttributes2.normals[vData.normal_index * 3]);
+        goKartFullVertexData2.push_back(goKartAttributes2.normals[vData.normal_index * 3 + 1]);
+        goKartFullVertexData2.push_back(goKartAttributes2.normals[vData.normal_index * 3 + 2]);
+        goKartFullVertexData2.push_back(goKartAttributes2.texcoords[vData.texcoord_index * 2]);
+        goKartFullVertexData2.push_back(goKartAttributes2.texcoords[vData.texcoord_index * 2 + 1]);
+    }
+
+    // Load the texture for the second GoKart
+    unsigned char* goKartTexBytes2 = stbi_load("LP_Material.001_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
+
+    GLuint goKartTexture2;
+    glGenTextures(1, &goKartTexture2);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, goKartTexture2);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img_width, img_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, goKartTexBytes2);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(goKartTexBytes2);
+
+    GLuint goKartVbo2, goKartVao2, goKartEbo2;
+    glGenVertexArrays(1, &goKartVao2);
+    glGenBuffers(1, &goKartVbo2);
+    glBindVertexArray(goKartVao2);
+    glBindBuffer(GL_ARRAY_BUFFER, goKartVbo2);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * goKartFullVertexData2.size(), goKartFullVertexData2.data(), GL_DYNAMIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    normalPtr = 3 * sizeof(float);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)normalPtr);
+
+    uvPtr = 6 * sizeof(float);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)uvPtr);
+
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glEnableVertexAttribArray(2);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+    // Repeat the same process for the third GoKart
+    std::string goKartPath3 = "uploads_files_4679076_GOkart.obj";
+    std::vector<tinyobj::shape_t> goKartShapes3;
+    std::vector<tinyobj::material_t> goKartMaterials3;
+    std::string goKartWarning3, goKartError3;
+    tinyobj::attrib_t goKartAttributes3;
+
+    bool goKartSuccess3 = tinyobj::LoadObj(&goKartAttributes3, &goKartShapes3, &goKartMaterials3, &goKartWarning3, &goKartError3, goKartPath3.c_str());
+
+    if (!goKartSuccess3) {
+        std::cerr << "Failed to load object: " << goKartError3 << std::endl;
+        if (!goKartWarning3.empty()) {
+            std::cerr << "Warning: " << goKartWarning3 << std::endl;
+        }
+        return -1;
+    }
+    else if (goKartShapes3.empty()) {
+        std::cerr << "Object has no shapes." << std::endl;
+        return -1;
+    }
+
+    std::vector<GLuint> goKartMeshIndices3;
+
+    for (int i = 0; i < goKartShapes3[0].mesh.indices.size(); i++) {
+        goKartMeshIndices3.push_back(goKartShapes3[0].mesh.indices[i].vertex_index);
+    }
+
+    std::vector<GLfloat> goKartFullVertexData3;
+
+    for (int i = 0; i < goKartShapes3[0].mesh.indices.size(); i++) {
+        tinyobj::index_t vData = goKartShapes3[0].mesh.indices[i];
+
+        if (vData.vertex_index * 3 + 2 >= goKartAttributes3.vertices.size() ||
+            vData.normal_index * 3 + 2 >= goKartAttributes3.normals.size() ||
+            vData.texcoord_index * 2 + 1 >= goKartAttributes3.texcoords.size()) {
+            std::cerr << "Index out of bounds while accessing vertex data." << std::endl;
+            return -1;
+        }
+
+        goKartFullVertexData3.push_back(goKartAttributes3.vertices[vData.vertex_index * 3]);
+        goKartFullVertexData3.push_back(goKartAttributes3.vertices[vData.vertex_index * 3 + 1]);
+        goKartFullVertexData3.push_back(goKartAttributes3.vertices[vData.vertex_index * 3 + 2]);
+        goKartFullVertexData3.push_back(goKartAttributes3.normals[vData.normal_index * 3]);
+        goKartFullVertexData3.push_back(goKartAttributes3.normals[vData.normal_index * 3 + 1]);
+        goKartFullVertexData3.push_back(goKartAttributes3.normals[vData.normal_index * 3 + 2]);
+        goKartFullVertexData3.push_back(goKartAttributes3.texcoords[vData.texcoord_index * 2]);
+        goKartFullVertexData3.push_back(goKartAttributes3.texcoords[vData.texcoord_index * 2 + 1]);
+    }
+
+    // Load the texture for the third GoKart
+    unsigned char* goKartTexBytes3 = stbi_load("LP_Material.001_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
+
+    GLuint goKartTexture3;
+    glGenTextures(1, &goKartTexture3);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, goKartTexture3);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img_width, img_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, goKartTexBytes3);
+    glGenerateMipmap(GL_TEXTURE_2D);
+    stbi_image_free(goKartTexBytes3);
+
+    GLuint goKartVbo3, goKartVao3, goKartEbo3;
+    glGenVertexArrays(1, &goKartVao3);
+    glGenBuffers(1, &goKartVbo3);
+    glBindVertexArray(goKartVao3);
+    glBindBuffer(GL_ARRAY_BUFFER, goKartVbo3);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * goKartFullVertexData3.size(), goKartFullVertexData3.data(), GL_DYNAMIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    normalPtr = 3 * sizeof(float);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)normalPtr);
+
+    uvPtr = 6 * sizeof(float);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (void*)uvPtr);
+
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glEnableVertexAttribArray(2);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
 
     glEnable(GL_DEPTH_TEST);
 
@@ -555,6 +720,34 @@ int main(void)
 
         glBindVertexArray(goKartVao);
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData.size() / 8);
+
+        // Draw the second GoKart object
+        glm::mat4 goKartTransform2 = glm::mat4(1.0f);
+        goKartTransform2 = glm::translate(goKartTransform2, glm::vec3(5.0f, 1.0f, -50.0f)); // Position the GoKart above the road
+        goKartTransform2 = glm::scale(goKartTransform2, glm::vec3(1.0f, 1.0f, 1.0f)); // Adjust the scale as needed
+
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform2));
+
+        glBindTexture(GL_TEXTURE_2D, goKartTexture2);
+        GLuint tex1Address2 = glGetUniformLocation(shaderProgram, "tex1");
+        glUniform1i(tex1Address2, 1);
+
+        glBindVertexArray(goKartVao2);
+        glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData2.size() / 8);
+
+        // Draw the third GoKart object
+        glm::mat4 goKartTransform3 = glm::mat4(1.0f);
+        goKartTransform3 = glm::translate(goKartTransform3, glm::vec3(-5.0f, 1.0f, -50.0f)); // Position the GoKart above the road
+        goKartTransform3 = glm::scale(goKartTransform3, glm::vec3(1.0f, 1.0f, 1.0f)); // Adjust the scale as needed
+
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform3));
+
+        glBindTexture(GL_TEXTURE_2D, goKartTexture3);
+        GLuint tex1Address3 = glGetUniformLocation(shaderProgram, "tex1");
+        glUniform1i(tex1Address3, 1);
+
+        glBindVertexArray(goKartVao3);
+        glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData3.size() / 8);
 
         glEnd();
         /* Swap front and back buffers */
