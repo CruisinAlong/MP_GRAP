@@ -15,10 +15,6 @@ out vec4 FragColor;
 
 void main() {
 
-    vec4 pixelColor = texture(tex0, TexCoord);
-    if(pixelColor.a < 0.1){
-        discard;
-    }
 
     // Normalize the normal vector
     vec3 normal = normalize(normCoord);
