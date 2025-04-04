@@ -17,7 +17,20 @@ float x_rot = 0;
 float y_rot = 0;
 float z_rot = 0;
 float scale = 1.5f;
-float camera_z = 10.0f;
+float player_spd = 0.0f;
+float player_z = 10.0f;
+float player_x = 0.0f;
+
+float ghost_spd[2];
+float ghost1_z = 0;
+float ghost2_z = 0;
+
+float raceLength = 100;
+
+bool moveGhosts = 0;
+bool hasWinner = 0;
+
+int winner = 0;
 
 
 void Key_Callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -64,10 +77,126 @@ void Key_Callback(GLFWwindow* window, int key, int scancode, int action, int mod
             z_rot -= 0.1f;
         }
     }
-    if (key == GLFW_KEY_W && (action == GLFW_PRESS || action == GLFW_REPEAT))
+    if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
     {
-        camera_z -= 1.0f; // Move the camera forward
+        
+        if (!moveGhosts) {
+
+            moveGhosts = 1;
+
+            std::cout << "Ghosts will move now\n";
+
+        }
+        else {
+
+            moveGhosts = 0;
+
+            std::cout << "Ghosts are stopping\n";
+
+        }
+
     }
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+    {
+
+        player_z -= 1.0f; // Move the camera forward
+
+        //std::cout << "Player Z : " << player_z << "\n";
+
+    }
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+    {
+        player_z += 1.0f;
+    }
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+    {
+        if (player_x > -3.0f) {
+
+            player_x -= 0.1f;
+
+        }
+    }
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+    {
+        if (player_x < 3.0f) {
+
+            player_x += 0.1f;
+
+        }
+    }
+
+}
+
+void ghostMovement() {
+
+    if (moveGhosts) {
+
+        ghost1_z -= (rand() % 12) / 100.0f;
+
+        ghost2_z -= (rand() % 8) / 100.0f;;
+
+        //std::cout << "Ghost 1 Z : " << ghost1_z << "\n";
+        //std::cout << "Ghost 2 Z : " << ghost2_z << "\n";
+
+    }
+    
+
+}
+
+void winCon() {
+
+    if (!hasWinner && player_z <= raceLength * -1) {
+
+        winner = 1;
+
+        hasWinner = 1;
+
+    }
+    if (!hasWinner && ghost1_z <= raceLength * -1) {
+
+        winner = 2;
+
+        hasWinner = 1;
+
+    }
+    if (!hasWinner && ghost2_z <= raceLength * -1) {
+
+        winner = 3;
+
+        hasWinner = 1;
+
+    }
+
+    bool noRepeat = 1;
+
+    if (hasWinner && noRepeat) {
+
+        moveGhosts = 0;
+
+        switch (winner) {
+
+            case 1:
+
+                std::cout << "Player is the winner\n";
+                noRepeat = 0;
+                break;
+
+            case 2:
+
+                std::cout << "Ghost 1 is the winner\n";
+                noRepeat = 0;
+                break;
+
+            case 3:
+
+                std::cout << "Ghost 2 is the winner\n";
+                noRepeat = 0;
+                break;
+
+        }
+
+    }
+
 }
 
 void checkShaderCompilation(GLuint shader) {
@@ -103,7 +232,7 @@ int main(void)
     float width = 1920.0f;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(width, height, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(width, height, "Mari of Kart Speed Unwanted \'25", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -349,7 +478,7 @@ int main(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); 
 
 
-    std::string goKartPath = "uploads_files_4679076_GOkart.obj";
+    std::string goKartPath = "3D/uploads_files_4679076_GOkart.obj";
     std::vector<tinyobj::shape_t> goKartShapes;
     std::vector<tinyobj::material_t> goKartMaterials;
     std::string goKartWarning, goKartError;
@@ -459,7 +588,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, camera_z);
+        glm::vec3 cameraPos = glm::vec3(player_x, 0.0f, player_z);
         glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // Camera front direction
         glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // Camera up direction
 
@@ -468,6 +597,10 @@ int main(void)
         {
             cameraPos += cameraFront * 0.1f; // Adjust the speed as needed
         }
+
+        winCon();
+
+        ghostMovement();
 
         // Calculate the view matrix
         glm::mat4 viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
