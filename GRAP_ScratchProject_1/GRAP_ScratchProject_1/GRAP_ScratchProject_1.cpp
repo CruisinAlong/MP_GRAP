@@ -478,7 +478,7 @@ int main(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); 
 
 
-    std::string goKartPath = "3D/uploads_files_4679076_GOkart.obj";
+    std::string goKartPath = "3D/LowPoly_Car.obj";
     std::vector<tinyobj::shape_t> goKartShapes;
     std::vector<tinyobj::material_t> goKartMaterials;
     std::string goKartWarning, goKartError;
@@ -528,7 +528,7 @@ int main(void)
     }
 
     // Load the texture for the new object (LP_Material.001_BaseColor.jpg)
-    unsigned char* goKartTexBytes = stbi_load("LP_Material.001_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
+    unsigned char* goKartTexBytes = stbi_load("LowPoly_Car_Car_Mat_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
 
     GLuint goKartTexture;
     glGenTextures(1, &goKartTexture);
@@ -563,7 +563,8 @@ int main(void)
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-    std::string goKartPath2 = "uploads_files_4679076_GOkart.obj";
+    // Load the second GoKart object
+    std::string goKartPath2 = "3D/LowPoly_Car.obj";
     std::vector<tinyobj::shape_t> goKartShapes2;
     std::vector<tinyobj::material_t> goKartMaterials2;
     std::string goKartWarning2, goKartError2;
@@ -612,7 +613,7 @@ int main(void)
     }
 
     // Load the texture for the second GoKart
-    unsigned char* goKartTexBytes2 = stbi_load("LP_Material.001_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
+    unsigned char* goKartTexBytes2 = stbi_load("LowPoly_Car_Car_Mat_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
 
     GLuint goKartTexture2;
     glGenTextures(1, &goKartTexture2);
@@ -646,7 +647,7 @@ int main(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
     // Repeat the same process for the third GoKart
-    std::string goKartPath3 = "uploads_files_4679076_GOkart.obj";
+    std::string goKartPath3 = "3D/LowPoly_Car.obj";
     std::vector<tinyobj::shape_t> goKartShapes3;
     std::vector<tinyobj::material_t> goKartMaterials3;
     std::string goKartWarning3, goKartError3;
@@ -695,7 +696,7 @@ int main(void)
     }
 
     // Load the texture for the third GoKart
-    unsigned char* goKartTexBytes3 = stbi_load("LP_Material.001_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
+    unsigned char* goKartTexBytes3 = stbi_load("LowPoly_Car_Car_Mat_BaseColor.png", &img_width, &img_height, &colorChannels, 0);
 
     GLuint goKartTexture3;
     glGenTextures(1, &goKartTexture3);
@@ -729,19 +730,22 @@ int main(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
+    
+
+
     glEnable(GL_DEPTH_TEST);
 
     //glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -2.0f, 2.0f, -1.0f, 1.0f); 
     glm::mat4 projection = glm::perspective(glm::radians(60.0f), width / height, 0.1f, 100.0f);
 
-    glm::vec3 lightPos = glm::vec3(-10, 3, 0);
+    glm::vec3 lightPos = glm::vec3(10, 3, 0);
     glm::vec3 lightColor = glm::vec3(1, 1, 1);
 
     float ambientStr = 1.57f;
     glm::vec3 ambientColor = lightColor;
 
-    float specStr = 1.0f;
-    float specPhong = 16;
+    float specStr = 2.0f;
+    float specPhong = 20;
 
 
     /* Loop until the user closes the window */
@@ -753,7 +757,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glm::vec3 cameraPos = glm::vec3(player_x, 0.0f, player_z);
+        glm::vec3 cameraPos = glm::vec3(player_x, -1.0f, player_z + 3);
         glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // Camera front direction
         glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // Camera up direction
 
@@ -801,7 +805,7 @@ int main(void)
         glm::mat4 transform = glm::mat4(1.0f);
         transform = glm::translate(transform, glm::vec3(x_mod, y_mod, z_mod));
         transform = glm::rotate(transform, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-        transform = glm::scale(transform, glm::vec3(scale * 50.0f, scale, scale));
+        transform = glm::scale(transform, glm::vec3(scale * 100.0, scale , scale));
 
         unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
@@ -842,9 +846,10 @@ int main(void)
 
         // Draw the GoKart object
         glm::mat4 goKartTransform = glm::mat4(1.0f);
-        goKartTransform = glm::translate(goKartTransform, glm::vec3(0.0f, 1.0f, -50.0f)); // Position the GoKart above the road
-        goKartTransform = glm::scale(goKartTransform, glm::vec3(1.0f, 1.0f, 1.0f)); // Adjust the scale as needed
-
+        goKartTransform = glm::translate(goKartTransform, glm::vec3(player_x, -2.0f, player_z - 5)); // Position the GoKart where the camera is
+        goKartTransform = glm::rotate(goKartTransform, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 180 degrees around the Y-axis
+        goKartTransform = glm::scale(goKartTransform, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
+        
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform));
 
         glBindTexture(GL_TEXTURE_2D, goKartTexture);
@@ -854,10 +859,10 @@ int main(void)
         glBindVertexArray(goKartVao);
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData.size() / 8);
 
-        // Draw the second GoKart object
         glm::mat4 goKartTransform2 = glm::mat4(1.0f);
-        goKartTransform2 = glm::translate(goKartTransform2, glm::vec3(5.0f, 1.0f, -50.0f)); // Position the GoKart above the road
-        goKartTransform2 = glm::scale(goKartTransform2, glm::vec3(1.0f, 1.0f, 1.0f)); // Adjust the scale as needed
+        goKartTransform2 = glm::translate(goKartTransform2, glm::vec3(player_x + 3.0f, -2.0f, ghost1_z - 5)); // Position the second GoKart
+        goKartTransform2 = glm::rotate(goKartTransform2, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
+        goKartTransform2 = glm::scale(goKartTransform2, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform2));
 
@@ -868,10 +873,10 @@ int main(void)
         glBindVertexArray(goKartVao2);
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData2.size() / 8);
 
-        // Draw the third GoKart object
         glm::mat4 goKartTransform3 = glm::mat4(1.0f);
-        goKartTransform3 = glm::translate(goKartTransform3, glm::vec3(-5.0f, 1.0f, -50.0f)); // Position the GoKart above the road
-        goKartTransform3 = glm::scale(goKartTransform3, glm::vec3(1.0f, 1.0f, 1.0f)); // Adjust the scale as needed
+        goKartTransform3 = glm::translate(goKartTransform3, glm::vec3(player_x - 3.0f, -2.0f, ghost2_z - 5)); // Position the third GoKart
+        goKartTransform3 = glm::rotate(goKartTransform3, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
+        goKartTransform3 = glm::scale(goKartTransform3, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform3));
 
@@ -881,6 +886,7 @@ int main(void)
 
         glBindVertexArray(goKartVao3);
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData3.size() / 8);
+
 
         glEnd();
         /* Swap front and back buffers */

@@ -37,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 893,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -50,25 +50,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-22T01:18:58.087Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ViewState": "AgIAAEUHAAAAAAAAAADwv18HAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-20T04:32:27.191Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -80,8 +66,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-19T00:53:14.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T00:53:14.383Z"
             },
             {
               "$type": "Document",
@@ -93,8 +78,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-19T00:51:31.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T00:51:31.351Z"
             },
             {
               "$type": "Document",
@@ -104,10 +88,22 @@
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "RelativeToolTip": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
-              "ViewState": "AgIAAFEBAAAAAAAAAAAwwG0BAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFwDAAAAAAAAAAAUwHcDAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-08T02:01:33.709Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
+              "ViewState": "AgIAAEUHAAAAAAAAAADwv18HAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-20T04:32:27.191Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
               "ViewState": "AgIAAIgNAAAAAAAAAAAuwJ0NAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-21T11:28:34.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-21T11:28:34.34Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\sample.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-22T01:18:47.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T01:18:47.009Z"
             }
           ]
         },
