@@ -32,6 +32,8 @@ bool hasWinner = 0;
 
 int winner = 0;
 
+bool noRepeat = 1;
+
 
 void Key_Callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
@@ -167,33 +169,37 @@ void winCon() {
 
     }
 
-    bool noRepeat = 1;
-
     if (hasWinner && noRepeat) {
 
         moveGhosts = 0;
+
+        int raceTime = glfwGetTime();
+
+        std::cout << "Race Time: " << raceTime << " seconds\n";
 
         switch (winner) {
 
             case 1:
 
                 std::cout << "Player is the winner\n";
-                noRepeat = 0;
+                //noRepeat = 0;
                 break;
 
             case 2:
 
                 std::cout << "Ghost 1 is the winner\n";
-                noRepeat = 0;
+                //noRepeat = 0;
                 break;
 
             case 3:
 
                 std::cout << "Ghost 2 is the winner\n";
-                noRepeat = 0;
+                //noRepeat = 0;
                 break;
 
         }
+
+        noRepeat = 0;
 
     }
 
