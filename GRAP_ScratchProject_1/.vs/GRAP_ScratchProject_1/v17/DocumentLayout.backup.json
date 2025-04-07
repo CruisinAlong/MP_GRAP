@@ -7,8 +7,36 @@
       "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PerspectiveCamera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\PerspectiveCamera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\DirectionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\DirectionalLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\PointLight.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Light.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\MyCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\MyCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PerspectiveCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\PerspectiveCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\stb_image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -26,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 893,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "sample.frag",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\sample.frag",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag",
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\sample.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-22T01:18:58.087Z",
               "IsPinned": true,
@@ -48,13 +76,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PointLight.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PointLight.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\PointLight.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PointLight.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\PointLight.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-07T10:41:07.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PerspectiveCamera.cpp",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PerspectiveCamera.cpp",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\PerspectiveCamera.cpp",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PerspectiveCamera.cpp",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\PerspectiveCamera.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-07T10:35:30.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Light.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Light.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Light.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Light.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\Light.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-07T10:14:14.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GRAP_ScratchProject_1.cpp",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "RelativeToolTip": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAF0DAAAAAAAAAAAAAGgDAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-08T02:01:33.709Z",
               "EditorCaption": ""
@@ -62,6 +129,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "DirectionalLight.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\DirectionalLight.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\DirectionalLight.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\DirectionalLight.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\DirectionalLight.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-07T12:49:40.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MyCamera.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\MyCamera.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\MyCamera.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\MyCamera.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\MyCamera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-07T10:12:33.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PerspectiveCamera.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PerspectiveCamera.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\PerspectiveCamera.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\PerspectiveCamera.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\PerspectiveCamera.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-07T10:35:33.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "stb_image.h",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\stb_image.h",
+              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\stb_image.h",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\stb_image.h",
+              "RelativeToolTip": "GRAP_ScratchProject_1\\stb_image.h",
+              "ViewState": "AgIAAFMFAAAAAAAAAAASwG0FAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-07T10:35:21.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "glad.h",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
@@ -73,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "sample.vert",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\sample.vert",

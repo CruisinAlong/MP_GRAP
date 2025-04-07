@@ -9,6 +9,10 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "DirectionalLight.h"
+#include "PointLight.h"
+
+
 
 float x_mod = 0;
 float y_mod = -5.0f;
@@ -31,10 +35,72 @@ bool moveGhosts = 0;
 bool hasWinner = 0;
 
 int winner = 0;
+// Define the directional light
+DirectionalLight directionalLight(
+    glm::vec3(0.2f, 0.2f, 0.2f), // Ambient color
+    glm::vec3(1.0f, 1.0f, 1.0f), // Light color
+    glm::vec3(-0.2f, -1.0f, -0.3f), // Light direction
+    0.5f, // Ambient strength
+    1.0f, // Specular strength
+    4.0f // Specular phong
+);
+
+// Define the point light
+PointLight pointLight1(
+    glm::vec3(1.0f, 1.0f, 1.0f), // Ambient color
+    0.1f, // Ambient strength
+    glm::vec3(1.0f, 1.0f, 1.0f), // Diffuse color
+    glm::vec3(1.0f, 1.0f, 1.0f), // Specular color
+    glm::vec3(0.0f, 1.0f, 0.0f), // Light position
+    1.0f, // Specular strength
+    32.0f, // Specular phong
+    1.0f, // Constant attenuation
+    0.09f, // Linear attenuation
+    0.032f // Quadratic attenuation
+);
+
+PointLight pointLight2(
+	glm::vec3(1.0f, 1.0f, 0.0f), // Ambient color
+	0.1f, // Ambient strength
+	glm::vec3(1.0f, 1.0f, 1.0f), // Diffuse color
+	glm::vec3(1.0f, 1.0f, 1.0f), // Specular color
+	glm::vec3(2.0f, 1.0f, 0.0f), // Light position
+	1.0f, // Specular strength
+	32.0f, // Specular phong
+	1.0f, // Constant attenuation
+	0.09f, // Linear attenuation
+	0.032f // Quadratic attenuation
+);
+
+PointLight pointLight3(
+	glm::vec3(0.0f, 1.0f, 1.0f), // Ambient color
+	0.1f, // Ambient strength
+	glm::vec3(1.0f, 1.0f, 1.0f), // Diffuse color
+	glm::vec3(1.0f, 1.0f, 1.0f), // Specular color
+	glm::vec3(-2.0f, 1.0f, 0.0f), // Light position
+	1.0f, // Specular strength
+	32.0f, // Specular phong
+	1.0f, // Constant attenuation
+	0.09f, // Linear attenuation
+	0.032f // Quadratic attenuation
+);
+
+
+bool useDirectionalLight = true;
 
 
 void Key_Callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+    if ((key == GLFW_KEY_Z && action == GLFW_PRESS))
+    {
+        useDirectionalLight = !useDirectionalLight;
+        if (useDirectionalLight) {
+            std::cout << "Switched to directional light (day mode)" << std::endl;
+        }
+        else {
+            std::cout << "Switched to point light (night mode)" << std::endl;
+        }
+    }
     if ((key == GLFW_KEY_Z && (action == GLFW_PRESS || action == GLFW_REPEAT)) ||
         (key == GLFW_KEY_X && (action == GLFW_PRESS || action == GLFW_REPEAT)))
     {
@@ -249,7 +315,6 @@ int main(void)
 
     stbi_set_flip_vertically_on_load(true);
 
-    unsigned char* tex_bytes = stbi_load("3D/Concrete020_2K_Color.png", &img_width, &img_height, &colorChannels, 0);
 
     glViewport(0, 0, width, height);
 
@@ -443,6 +508,7 @@ int main(void)
         fullVertexData.push_back(attributes.texcoords[vData.texcoord_index * 2]); 
         fullVertexData.push_back(attributes.texcoords[vData.texcoord_index * 2 + 1]);        
     }
+    unsigned char* tex_bytes = stbi_load("3D/Concrete020_2K_Color.png", &img_width, &img_height, &colorChannels, 0);
 
     GLuint texture;
     glGenTextures(1, &texture);
@@ -738,22 +804,10 @@ int main(void)
     //glm::mat4 projection = glm::ortho(-2.0f, 2.0f, -2.0f, 2.0f, -1.0f, 1.0f); 
     glm::mat4 projection = glm::perspective(glm::radians(60.0f), width / height, 0.1f, 100.0f);
 
-    glm::vec3 lightPos = glm::vec3(10, 3, 0);
-    glm::vec3 lightColor = glm::vec3(1, 1, 1);
-
-    float ambientStr = 1.57f;
-    glm::vec3 ambientColor = lightColor;
-
-    float specStr = 2.0f;
-    float specPhong = 20;
 
 
-    /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-
-        // Inside the while loop
-
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -774,38 +828,56 @@ int main(void)
         // Calculate the view matrix
         glm::mat4 viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
-        glDepthMask(GL_FALSE);
-        glDepthFunc(GL_LEQUAL);
-        glUseProgram(skyboxShaderProgram);
-        glm::mat4 sky_view = glm::mat4(1.f);
-        sky_view = glm::mat4(glm::mat3(viewMatrix));
+        if (useDirectionalLight) {
+            glDepthMask(GL_FALSE);
+            glDepthFunc(GL_LEQUAL);
+            glUseProgram(skyboxShaderProgram);
+            glm::mat4 sky_view = glm::mat4(1.f);
+            sky_view = glm::mat4(glm::mat3(viewMatrix));
 
-        // Set the view and projection matrices for the skybox
-        glUniformMatrix4fv(glGetUniformLocation(skyboxShaderProgram, "view"), 1, GL_FALSE, glm::value_ptr(sky_view));
-        glUniformMatrix4fv(glGetUniformLocation(skyboxShaderProgram, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+            // Set the view and projection matrices for the skybox
+            glUniformMatrix4fv(glGetUniformLocation(skyboxShaderProgram, "view"), 1, GL_FALSE, glm::value_ptr(sky_view));
+            glUniformMatrix4fv(glGetUniformLocation(skyboxShaderProgram, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
-        unsigned int skyboxProjLoc = glGetUniformLocation(skyboxShaderProgram, "projection");
-        glUniformMatrix4fv(skyboxProjLoc, 1, GL_FALSE, glm::value_ptr(projection));
+            unsigned int skyboxProjLoc = glGetUniformLocation(skyboxShaderProgram, "projection");
+            glUniformMatrix4fv(skyboxProjLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-        unsigned int skyboxViewLoc = glGetUniformLocation(skyboxShaderProgram, "view");
-        glUniformMatrix4fv(skyboxViewLoc, 1, GL_FALSE, glm::value_ptr(sky_view));
+            unsigned int skyboxViewLoc = glGetUniformLocation(skyboxShaderProgram, "view");
+            glUniformMatrix4fv(skyboxViewLoc, 1, GL_FALSE, glm::value_ptr(sky_view));
 
-        // Bind the skybox VAO and texture, then draw the skybox
-        glBindVertexArray(skyboxVao);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+            // Bind the skybox VAO and texture, then draw the skybox
+            glBindVertexArray(skyboxVao);
+            glBindTexture(GL_TEXTURE_CUBE_MAP, skyboxTexture);
+            glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 
-        // Re-enable depth writing and set depth function back to less than
-        glDepthMask(GL_TRUE);
-        glDepthFunc(GL_LESS);
+            // Re-enable depth writing and set depth function back to less than
+            glDepthMask(GL_TRUE);
+            glDepthFunc(GL_LESS);
+        }
 
         glUseProgram(shaderProgram);
+
+        if (useDirectionalLight) {
+            directionalLight.applyLight(shaderProgram);
+            glUniform1i(glGetUniformLocation(shaderProgram, "useDirectionalLight"), true);
+        }
+        else {
+            glUniform1i(glGetUniformLocation(shaderProgram, "useDirectionalLight"), false);
+            pointLight1.position = glm::vec3(player_x, -1.0f, player_z - 24.0f); // Position the first point light at the front of the player car
+            pointLight2.position = glm::vec3(player_x + 3.0f, -1.0f, ghost1_z - 24.0f); // Position the second point light at the front of the first ghost car
+            pointLight3.position = glm::vec3(player_x - 3.0f, -1.0f, ghost2_z - 24.0f); // Position the third point light at the front of the second ghost car
+
+            // Apply the point lights
+            pointLight1.applyLight(shaderProgram, 0);
+            pointLight2.applyLight(shaderProgram, 1);
+            pointLight3.applyLight(shaderProgram, 2);
+        }
 
         // Create transformation matrix for the road
         glm::mat4 transform = glm::mat4(1.0f);
         transform = glm::translate(transform, glm::vec3(x_mod, y_mod, z_mod));
         transform = glm::rotate(transform, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-        transform = glm::scale(transform, glm::vec3(scale * 100.0, scale , scale));
+        transform = glm::scale(transform, glm::vec3(scale * 100.0, scale, scale));
 
         unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
@@ -821,24 +893,6 @@ int main(void)
         GLuint tex0Address = glGetUniformLocation(shaderProgram, "tex0");
         glUniform1i(tex0Address, 0);
 
-        GLuint lightAddress = glGetUniformLocation(shaderProgram, "lightPos");
-        glUniform3fv(lightAddress, 1, glm::value_ptr(lightPos));
-        GLuint lightColorAddress = glGetUniformLocation(shaderProgram, "lightColor");
-        glUniform3fv(lightColorAddress, 1, glm::value_ptr(lightColor));
-
-        GLuint ambientStrAddress = glGetUniformLocation(shaderProgram, "ambientStr");
-        glUniform3fv(ambientStrAddress, 1, glm::value_ptr(ambientColor));
-        GLuint ambientColorAddress = glGetUniformLocation(shaderProgram, "ambientColor");
-        glUniform1f(ambientColorAddress, ambientStr);
-
-        GLuint cameraPosAddress = glGetUniformLocation(shaderProgram, "cameraPos");
-        glUniform3fv(cameraPosAddress, 1, glm::value_ptr(cameraPos));
-        GLuint specStrAddress = glGetUniformLocation(shaderProgram, "specStr");
-        glUniform1f(specStrAddress, specStr);
-
-        GLuint specPhongAddress = glGetUniformLocation(shaderProgram, "specPhong");
-        glUniform1f(specPhongAddress, specPhong);
-
         glUseProgram(shaderProgram);
         glBindVertexArray(vao);
 
@@ -847,9 +901,9 @@ int main(void)
         // Draw the GoKart object
         glm::mat4 goKartTransform = glm::mat4(1.0f);
         goKartTransform = glm::translate(goKartTransform, glm::vec3(player_x, -2.0f, player_z - 5)); // Position the GoKart where the camera is
-        goKartTransform = glm::rotate(goKartTransform, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 180 degrees around the Y-axis
+        goKartTransform = glm::rotate(goKartTransform, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 180 degrees around the Y-axis
         goKartTransform = glm::scale(goKartTransform, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
-        
+
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform));
 
         glBindTexture(GL_TEXTURE_2D, goKartTexture);
@@ -861,7 +915,7 @@ int main(void)
 
         glm::mat4 goKartTransform2 = glm::mat4(1.0f);
         goKartTransform2 = glm::translate(goKartTransform2, glm::vec3(player_x + 3.0f, -2.0f, ghost1_z - 5)); // Position the second GoKart
-        goKartTransform2 = glm::rotate(goKartTransform2, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
+        goKartTransform2 = glm::rotate(goKartTransform2, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
         goKartTransform2 = glm::scale(goKartTransform2, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform2));
@@ -875,7 +929,7 @@ int main(void)
 
         glm::mat4 goKartTransform3 = glm::mat4(1.0f);
         goKartTransform3 = glm::translate(goKartTransform3, glm::vec3(player_x - 3.0f, -2.0f, ghost2_z - 5)); // Position the third GoKart
-        goKartTransform3 = glm::rotate(goKartTransform3, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
+        goKartTransform3 = glm::rotate(goKartTransform3, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
         goKartTransform3 = glm::scale(goKartTransform3, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(goKartTransform3));
@@ -887,15 +941,15 @@ int main(void)
         glBindVertexArray(goKartVao3);
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData3.size() / 8);
 
-
         glEnd();
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 
         /* Poll for and process events */
         glfwPollEvents();
-
     }
+
+
     glDeleteVertexArrays(1, &vao);
     glDeleteBuffers(1, &vbo);
 

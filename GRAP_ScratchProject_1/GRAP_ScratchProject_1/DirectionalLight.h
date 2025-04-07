@@ -1,6 +1,9 @@
+// DirectionalLight.h
 #pragma once
 #include "Light.h"
 #include <iostream>
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 class DirectionalLight : public Light {
 public:
@@ -16,11 +19,11 @@ public:
     }
 
     void applyLight(GLuint shaderProgram) const override {
-        GLuint lightPosAddress = glGetUniformLocation(shaderProgram, "lightPos");
+        GLuint lightPosAddress = glGetUniformLocation(shaderProgram, "dirLight.direction");
         glUniform3fv(lightPosAddress, 1, glm::value_ptr(lightPos));
-        GLuint lightColorAddress = glGetUniformLocation(shaderProgram, "lightColor");
+        GLuint lightColorAddress = glGetUniformLocation(shaderProgram, "dirLight.diffuse");
         glUniform3fv(lightColorAddress, 1, glm::value_ptr(lightColor));
-        GLuint ambientColorAddress = glGetUniformLocation(shaderProgram, "ambientColor");
+        GLuint ambientColorAddress = glGetUniformLocation(shaderProgram, "dirLight.ambient");
         glUniform3fv(ambientColorAddress, 1, glm::value_ptr(ambientColor));
         GLuint ambientStrAddress = glGetUniformLocation(shaderProgram, "ambientStr");
         glUniform1f(ambientStrAddress, ambientStr);
@@ -43,3 +46,4 @@ public:
         }
     }
 };
+

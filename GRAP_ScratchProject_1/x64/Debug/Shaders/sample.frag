@@ -1,49 +1,86 @@
 #version 330 core
 
+struct PointLight {
+    vec3 position;
+    float constant;
+    float linear;
+    float quadratic;
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+
+struct DirectionalLight {
+    vec3 direction;
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+
+#define NR_POINT_LIGHTS 3
+uniform PointLight pointLights[NR_POINT_LIGHTS];
+uniform DirectionalLight dirLight;
+
 uniform sampler2D tex0;
-uniform vec3 lightPos;
-uniform vec3 lightColor;
-uniform float ambientStr;
-uniform vec3 ambientColor;
 uniform vec3 cameraPos;
 uniform float specStr;
 uniform float specPhong;
+uniform bool useDirectionalLight;
 in vec2 TexCoord;
 in vec3 normCoord;
 in vec3 fragPos;
 out vec4 FragColor;
 
+vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir) {
+    vec3 lightDir = normalize(light.position - fragPos);
+    // diffuse shading
+    float diff = max(dot(normal, lightDir), 0.0);
+    // specular shading
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), specPhong);
+    // attenuation
+    float distance = length(light.position - fragPos);
+    float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
+    // combine results
+    vec3 ambient = light.ambient * vec3(texture(tex0, TexCoord));
+    vec3 diffuse = light.diffuse * diff * vec3(texture(tex0, TexCoord));
+    vec3 specular = light.specular * spec * vec3(texture(tex0, TexCoord));
+    ambient *= attenuation;
+    diffuse *= attenuation;
+    specular *= attenuation;
+    return (ambient + diffuse + specular);
+}
+
+vec3 CalcDirLight(DirectionalLight light, vec3 normal, vec3 viewDir) {
+    vec3 lightDir = normalize(-light.direction);
+    // diffuse shading
+    float diff = max(dot(normal, lightDir), 0.0);
+    // specular shading
+    vec3 reflectDir = reflect(-lightDir, normal);
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), specPhong);
+    // combine results
+    vec3 ambient = light.ambient * vec3(texture(tex0, TexCoord));
+    vec3 diffuse = light.diffuse * diff * vec3(texture(tex0, TexCoord));
+    vec3 specular = light.specular * spec * vec3(texture(tex0, TexCoord));
+    return (ambient + diffuse + specular);
+}
+
 void main() {
-
-
     // Normalize the normal vector
     vec3 normal = normalize(normCoord);
-    
-    // Calculate the direction from the fragment to the light source
-    vec3 lightDir = normalize(lightPos - fragPos);
-
-    // Diffuse shading: calculate the dot product of the normal and light direction
-    float diff = max(dot(normal, lightDir), 0.0);
-    vec3 diffuse = diff * lightColor;
-
-    // Ambient shading: multiply the ambient strength by the ambient color
-    vec3 ambientCol = ambientStr * ambientColor;
-
-    // Specular shading: calculate the view direction and reflection direction
     vec3 viewDir = normalize(cameraPos - fragPos);
-    vec3 reflectDir = reflect(-lightDir, normal);
-    float spec = pow(max(dot(reflectDir, viewDir), 0.0), specPhong);
-    vec3 specColor = spec * specStr * lightColor;
+    vec3 result = vec3(0.0);
 
-    // Attenuation: calculate the distance from the light source to the fragment
-    float distance = length(lightPos - fragPos);
-    float constant = 1.0f;
-    float linear = 0.09f;
-    float quadratic = 0.032f;
-    float attenuation = 1.0 / (constant + linear * distance + quadratic * (distance * distance));
+    if (useDirectionalLight) {
+        // Directional light calculations
+        result = CalcDirLight(dirLight, normal, viewDir);
+    } else {
+        // Point light calculations
+        for (int i = 0; i < NR_POINT_LIGHTS; i++) {
+            result += CalcPointLight(pointLights[i], normal, fragPos, viewDir);
+        }
+    }
 
-    // Combine the results: add ambient, diffuse, and specular components, then apply attenuation
-    vec3 result = (ambientCol + diffuse + specColor) * attenuation;
     result = clamp(result, 0.0, 1.0); // Ensure the result is within the valid range
 
     // Output the final color, combining the lighting result with the texture color
