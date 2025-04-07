@@ -88,6 +88,8 @@ PointLight pointLight3(
 
 bool useDirectionalLight = true;
 
+bool use1stCam = 1;
+
 bool noRepeat = 1;
 
 
@@ -95,26 +97,35 @@ void Key_Callback(GLFWwindow* window, int key, int scancode, int action, int mod
 {
     if ((key == GLFW_KEY_Z && action == GLFW_PRESS))
     {
+
+        use1stCam = !use1stCam;
+
+        if (use1stCam) {
+
+            std::cout << "Using 1st person camera\n";
+
+        }
+        else if (!use1stCam) {
+
+            std::cout << "Using 3rd person camera \n";
+
+        }
+
+    }
+
+    if ((key == GLFW_KEY_Q && action == GLFW_PRESS)) {
+
+        useDirectionalLight = 1;
+        std::cout << "Switched to directional light (day mode)" << std::endl;
+
+    }
+    if ((key == GLFW_KEY_E && action == GLFW_PRESS)) {
+
         useDirectionalLight = !useDirectionalLight;
-        if (useDirectionalLight) {
-            std::cout << "Switched to directional light (day mode)" << std::endl;
-        }
-        else {
-            std::cout << "Switched to point light (night mode)" << std::endl;
-        }
+        std::cout << "Switched to point light (night mode)" << std::endl;
+
     }
-    if ((key == GLFW_KEY_Z && (action == GLFW_PRESS || action == GLFW_REPEAT)) ||
-        (key == GLFW_KEY_X && (action == GLFW_PRESS || action == GLFW_REPEAT)))
-    {
-        if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS)
-        {
-            z_mod -= 1.f;
-        }
-        if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS)
-        {
-            z_mod += 1.f;
-        }
-    }
+    
     if ((key == GLFW_KEY_LEFT && (action == GLFW_PRESS || action == GLFW_REPEAT)) ||
         (key == GLFW_KEY_RIGHT && (action == GLFW_PRESS || action == GLFW_REPEAT)) ||
         (key == GLFW_KEY_UP && (action == GLFW_PRESS || action == GLFW_REPEAT)) ||
@@ -817,7 +828,7 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glm::vec3 cameraPos = glm::vec3(player_x, -1.0f, player_z + 3);
+        glm::vec3 cameraPos = glm::vec3(player_x, -1.0f, player_z - 6);
         glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // Camera front direction
         glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // Camera up direction
 
@@ -833,6 +844,17 @@ int main(void)
 
         // Calculate the view matrix
         glm::mat4 viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+
+        if (use1stCam) {
+
+            viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+
+        }
+        else if (!use1stCam) {
+
+
+
+        }
 
         if (useDirectionalLight) {
             glDepthMask(GL_FALSE);
