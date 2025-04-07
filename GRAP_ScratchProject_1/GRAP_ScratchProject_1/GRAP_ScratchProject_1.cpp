@@ -18,7 +18,7 @@ float y_rot = 0;
 float z_rot = 0;
 float scale = 1.5f;
 float player_spd = 0.0f;
-float player_z = 10.0f;
+float player_z = 0.0f;
 float player_x = 0.0f;
 
 float ghost_spd[2];
@@ -249,7 +249,7 @@ int main(void)
 
     stbi_set_flip_vertically_on_load(true);
 
-    unsigned char* tex_bytes = stbi_load("3D/rua com faixada.jpg", &img_width, &img_height, &colorChannels, 0);
+    unsigned char* tex_bytes = stbi_load("3D/Concrete020_2K_Color.png", &img_width, &img_height, &colorChannels, 0);
 
     glViewport(0, 0, width, height);
 
@@ -414,7 +414,7 @@ int main(void)
     }
 
 
-    std::string path = "3D/untitled.obj";
+    std::string path = "3D/low poly roads.obj";
     std::vector<tinyobj::shape_t> shapes;
     std::vector<tinyobj::material_t> materials;
     std::string warning, error;

@@ -7,19 +7,8 @@
       "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|solutionrelative:GRAP_ScratchProject_1\\Shaders\\sample.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26B85E33-4AE2-491E-95AD-8C6809554E54}|GRAP_ScratchProject_1\\GRAP_ScratchProject_1.vcxproj|C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -37,48 +26,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 893,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "sample.frag",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\sample.frag",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.frag",
               "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\sample.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-22T01:18:58.087Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "skyboxVertShader.vert",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
-              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
-              "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxVertShader.vert",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-19T00:53:14.383Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "skyboxFragShader.frag",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
-              "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
-              "RelativeToolTip": "GRAP_ScratchProject_1\\Shaders\\skyboxFragShader.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-19T00:51:31.351Z"
             },
             {
               "$type": "Document",
@@ -88,26 +54,14 @@
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
               "RelativeToolTip": "GRAP_ScratchProject_1\\GRAP_ScratchProject_1.cpp",
-              "ViewState": "AgIAAFwDAAAAAAAAAAAUwHcDAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-08T02:01:33.709Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\include\\vector",
-              "ViewState": "AgIAAEUHAAAAAAAAAADwv18HAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-20T04:32:27.191Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "glad.h",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Dependencies\\include\\glad\\glad.h",
@@ -119,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "sample.vert",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\MP_GRAP\\MP_GRAP\\GRAP_ScratchProject_1\\GRAP_ScratchProject_1\\Shaders\\sample.vert",
               "RelativeDocumentMoniker": "GRAP_ScratchProject_1\\Shaders\\sample.vert",
