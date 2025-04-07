@@ -1,16 +1,23 @@
 ﻿  GRAP_ScratchProject_1.cpp
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(301,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(301,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(319,29): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(319,22): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(899,61): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(914,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(928,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(942,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(775,36): warning C4101: 'goKartEbo3': unreferenced local variable
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(521,22): warning C4101: 'ebo': unreferenced local variable
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(521,27): warning C4101: 'vbo_uv': unreferenced local variable
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(692,36): warning C4101: 'goKartEbo2': unreferenced local variable
-C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(607,34): warning C4101: 'goKartEbo': unreferenced local variable
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(113,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(114,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(118,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(119,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(120,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(121,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(304,22): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(369,38): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(369,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(387,29): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(387,22): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(984,61): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(999,67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(1013,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(1027,68): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(846,36): warning C4101: 'goKartEbo3': unreferenced local variable
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(592,22): warning C4101: 'ebo': unreferenced local variable
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(592,27): warning C4101: 'vbo_uv': unreferenced local variable
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(763,36): warning C4101: 'goKartEbo2': unreferenced local variable
+C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\GRAP_ScratchProject_1\GRAP_ScratchProject_1.cpp(678,34): warning C4101: 'goKartEbo': unreferenced local variable
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   GRAP_ScratchProject_1.vcxproj -> C:\Users\ASUS\Documents\GitHub\MP_GRAP\MP_GRAP\GRAP_ScratchProject_1\x64\Debug\GRAP_ScratchProject_1.exe

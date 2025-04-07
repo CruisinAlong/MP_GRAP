@@ -11,6 +11,8 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "DirectionalLight.h"
 #include "PointLight.h"
+#include "PerspectiveCamera.h"
+
 
 
 
@@ -29,7 +31,9 @@ float ghost_spd[2];
 float ghost1_z = 0;
 float ghost2_z = 0;
 
-float raceLength = 100;
+
+
+float raceLength = 500;
 
 bool moveGhosts = 0;
 bool hasWinner = 0;
@@ -86,11 +90,58 @@ PointLight pointLight3(
 );
 
 
+
 bool useDirectionalLight = true;
 
 bool use1stCam = 1;
 
 bool noRepeat = 1;
+
+PerspectiveCamera camera(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.0f, 0.0f), 45.0f, 1920.0f / 1080.0f, 0.1f, 100.0f);
+
+float cameraDistance = 5.0f; // Distance from the kart
+float cameraYaw = -90.0f; // Yaw angle
+float cameraPitch = 20.0f; // Pitch angle
+float lastX = 960.0f, lastY = 540.0f; // Center of the screen
+bool firstMouse = true;
+
+
+
+void Mouse_Callback(GLFWwindow* window, double xpos, double ypos) {
+    if (!use1stCam) { // Only update camera if third person mode is active
+        if (firstMouse) {
+            lastX = xpos;
+            lastY = ypos;
+            firstMouse = false;
+        }
+
+        float xoffset = xpos - lastX;
+        float yoffset = lastY - ypos; // Reversed since y-coordinates go from bottom to top
+        lastX = xpos;
+        lastY = ypos;
+
+        float sensitivity = 0.1f; // Change this value to your liking
+        xoffset *= sensitivity;
+        yoffset *= sensitivity;
+
+        cameraYaw += xoffset;
+        cameraPitch += yoffset;
+
+        // Make sure that when pitch is out of bounds, the screen doesn't get flipped
+        if (cameraPitch > 89.0f)
+            cameraPitch = 89.0f;
+        if (cameraPitch < -89.0f)
+            cameraPitch = -89.0f;
+    }
+}
+
+glm::vec3 calculateCameraPosition(glm::vec3 kartPosition) {
+    glm::vec3 cameraPosition;
+    cameraPosition.x = kartPosition.x - cameraDistance * cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+    cameraPosition.y = kartPosition.y + cameraDistance * sin(glm::radians(cameraPitch));
+    cameraPosition.z = kartPosition.z - cameraDistance * sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+    return cameraPosition;
+}
 
 
 void Key_Callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -336,6 +387,9 @@ int main(void)
     glViewport(0, 0, width, height);
 
     glfwSetKeyCallback(window, Key_Callback);
+    glfwSetCursorPosCallback(window, Mouse_Callback);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
 
     std::fstream vertSrc("Shaders/sample.vert");
     std::stringstream vertBuff;
@@ -828,9 +882,11 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glm::vec3 cameraPos = glm::vec3(player_x, -1.0f, player_z - 6);
-        glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // Camera front direction
-        glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f); // Camera up direction
+        glm::vec3 kartPosition = glm::vec3(player_x, -5.0f, player_z);
+        glm::vec3 cameraPos;
+        glm::vec3 cameraFront;
+        glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+        glm::mat4 viewMatrix;
 
         // Move the camera forward when the W key is pressed
         if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
@@ -842,19 +898,20 @@ int main(void)
 
         ghostMovement();
 
-        // Calculate the view matrix
-        glm::mat4 viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-
         if (use1stCam) {
-
+            // First-person camera logic
+            cameraPos = kartPosition + glm::vec3(0.0f, 1.5f, -5.5f); // Adjust the offset as needed
+            cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
             viewMatrix = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-
         }
-        else if (!use1stCam) {
-
-
-
+        else {
+            // Third-person camera logic
+            cameraPos = calculateCameraPosition(kartPosition);
+            cameraFront = glm::normalize(kartPosition - cameraPos);
+            viewMatrix = glm::lookAt(cameraPos, kartPosition, cameraUp);
         }
+
+
 
         if (useDirectionalLight) {
             glDepthMask(GL_FALSE);
@@ -928,7 +985,7 @@ int main(void)
 
         // Draw the GoKart object
         glm::mat4 goKartTransform = glm::mat4(1.0f);
-        goKartTransform = glm::translate(goKartTransform, glm::vec3(player_x, -2.0f, player_z - 5)); // Position the GoKart where the camera is
+        goKartTransform = glm::translate(goKartTransform, glm::vec3(player_x, -5.0f, player_z - 5)); // Position the GoKart where the camera is
         goKartTransform = glm::rotate(goKartTransform, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 180 degrees around the Y-axis
         goKartTransform = glm::scale(goKartTransform, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
@@ -942,7 +999,7 @@ int main(void)
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData.size() / 8);
 
         glm::mat4 goKartTransform2 = glm::mat4(1.0f);
-        goKartTransform2 = glm::translate(goKartTransform2, glm::vec3(player_x + 3.0f, -2.0f, ghost1_z - 5)); // Position the second GoKart
+        goKartTransform2 = glm::translate(goKartTransform2, glm::vec3(player_x + 3.0f, -5.0f, ghost1_z - 5)); // Position the second GoKart
         goKartTransform2 = glm::rotate(goKartTransform2, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
         goKartTransform2 = glm::scale(goKartTransform2, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
@@ -956,7 +1013,7 @@ int main(void)
         glDrawArrays(GL_TRIANGLES, 0, goKartFullVertexData2.size() / 8);
 
         glm::mat4 goKartTransform3 = glm::mat4(1.0f);
-        goKartTransform3 = glm::translate(goKartTransform3, glm::vec3(player_x - 3.0f, -2.0f, ghost2_z - 5)); // Position the third GoKart
+        goKartTransform3 = glm::translate(goKartTransform3, glm::vec3(player_x - 3.0f, -5.0f, ghost2_z - 5)); // Position the third GoKart
         goKartTransform3 = glm::rotate(goKartTransform3, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f)); // Rotate 90 degrees around the Y-axis
         goKartTransform3 = glm::scale(goKartTransform3, glm::vec3(0.02f, 0.02f, 0.02f)); // Adjust the scale as needed
 
